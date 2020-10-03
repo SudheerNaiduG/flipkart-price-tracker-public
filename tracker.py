@@ -8,15 +8,15 @@ HEADERS = ({'User-Agent':
             'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
             'Accept-Language': 'en-US, en;q=0.5'})
 
-url="Replace this with your product URL"
+url="enter the product URL inside these quotes"
 
-TrackingPrice=enter the threshhold price
+TrackingPrice= 0   #enter the threshhold price
 count=0
 
 res = requests.get(url,headers=HEADERS)
 soup = bs4.BeautifulSoup(res.content, features='lxml')
 
-#get the below 2 values from the twilio website settings page and check under the Live credentials tab
+#get the below 2 values from the twilio website settings page and check under the Live credentials tab and enter the values inside the quotes
 accountSid = "xxxxxxxxxxxxxxxxxxxxxx" 
 authToken = "xxxxxxxxxxxxxxxxxxxxxxxx"  
 
