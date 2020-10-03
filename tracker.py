@@ -15,10 +15,13 @@ count=0
 
 res = requests.get(url,headers=HEADERS)
 soup = bs4.BeautifulSoup(res.content, features='lxml')
+
+#get the below 2 values from the twilio website settings page and check under the Live credentials tab
 accountSid = "xxxxxxxxxxxxxxxxxxxxxx" 
-authToken = "xxxxxxxxxxxxxxxxxxxxxxxx" 
+authToken = "xxxxxxxxxxxxxxxxxxxxxxxx"  
+
 client = Client(accountSid, authToken) 
-myTwilioNumber = "number sholud be of the form +91123456789"
+myTwilioNumber = "number sholud be of the form +91123456789" #this number should be the bought twilio number. It is free
 destCellPhone = "number should be of the form +91123456789"
 
 while True:
