@@ -11,7 +11,6 @@ HEADERS = ({'User-Agent':
 url="enter the product URL inside these quotes"
 
 TrackingPrice= 0   #enter the threshhold price
-count=0
 
 res = requests.get(url,headers=HEADERS)
 soup = bs4.BeautifulSoup(res.content, features='lxml')
@@ -34,10 +33,7 @@ while True:
     if amount<=TrackingPrice:
       msg="You got a offer on the {0} for {1}. Check out the product {2}".format(title,amount,url)
       myMessage = client.messages.create(body = msg, from_=myTwilioNumber, to=destCellPhone) 
-      count+=1
-      if count==5:
-        TrackingPrice=amount-1
-        count=0
+      TrackingPrice=amount-1
 
   except:
     msg="Couldn't get details about product"
